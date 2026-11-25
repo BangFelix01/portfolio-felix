@@ -1,12 +1,11 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import Journey from "@/components/sections/Journey";
+import Experience from "@/components/sections/Experience";
 
-const sections = [
-  { id: "projects", title: "Projects" },
-  { id: "experience", title: "Experience" },
-  { id: "contact", title: "Contact" },
-];
+const sections = [{ id: "contact", title: "Contact" }];
 
 export default function Home() {
   return (
@@ -14,6 +13,9 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <Projects />
+      <Journey />
+      <Experience />
 
       {sections.map((section) => (
         <section
