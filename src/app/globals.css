@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Tema gelap = default. Tema terang aktif jika <html> punya class "light" */
+:root,
+.dark {
+  color-scheme: dark;
+  --background: #0a0b10;
+  --foreground: #f4f5f8;
+  --muted: #a1a6b5;
+  --accent: #7c8cff;
+  --glass-fill: rgb(255 255 255 / 0.06);
+  --glass-border: rgb(255 255 255 / 0.14);
+  --glass-highlight: rgb(255 255 255 / 0.2);
+}
+
+.light {
+  color-scheme: light;
+  --background: #f6f7fb;
+  --foreground: #12141c;
+  --muted: #5a6072;
+  --accent: #4a5bea;
+  --glass-fill: rgb(255 255 255 / 0.55);
+  --glass-border: rgb(18 20 28 / 0.1);
+  --glass-highlight: rgb(255 255 255 / 0.9);
+}
+
+/* Mendaftarkan variabel ke Tailwind supaya bisa dipakai sebagai class */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument-serif);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
